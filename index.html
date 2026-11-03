@@ -9,7 +9,7 @@
 <meta name="description" content="Perry Runner 3D: endless runner 3D ambientado en el campus de la Universidad del Valle. Salta, deslízate y llega a tiempo a clase.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Bungee&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --marino:#07141b; --marino2:#0b1c26; --panel:#10262f;
@@ -170,69 +170,240 @@ footer b{color:var(--dorado)}
 }
 @media (max-width:560px){.grid3{grid-template-columns:1fr}.metricas{grid-template-columns:1fr 1fr 1fr}.metrica b{font-size:1.3rem}.btn{width:100%;justify-content:center}}
 
-/* ---------- CAPA NEON FUTURISTA ---------- */
+/* ---------- DISEÑO PROFESIONAL ---------- */
+:root{--ft:'Sora',Inter,system-ui,sans-serif;--borde:rgba(255,255,255,.08);--sup:#0e1f28}
 html{background:#07141b;color-scheme:dark}
-body{background-color:#07141b;background-image:radial-gradient(900px 500px at 85% -5%,rgba(255,157,31,.10),transparent 60%),radial-gradient(800px 500px at 0% 40%,rgba(43,196,189,.08),transparent 60%);background-attachment:fixed}
-section{background:transparent}
-body:before{display:none}
-header{border-bottom:1px solid rgba(43,196,189,.35);box-shadow:0 0 22px rgba(43,196,189,.18)}
-.logo{text-shadow:0 0 8px var(--dorado),0 0 22px rgba(43,196,189,.6)}
-.logo span{text-shadow:0 0 8px var(--naranja),0 0 22px rgba(255,157,31,.7)}
-nav a.enlace:hover,nav a.enlace.activo{color:var(--dorado);background:rgba(43,196,189,.1);box-shadow:0 0 14px rgba(43,196,189,.35) inset}
-nav a.jugar{box-shadow:0 0 16px var(--naranja),0 0 36px rgba(255,157,31,.45)}
-#inicio{background:radial-gradient(1000px 520px at 78% 30%,rgba(163,21,58,.30),transparent 60%),radial-gradient(700px 420px at 10% 90%,rgba(255,157,31,.20),transparent 60%),radial-gradient(500px 300px at 50% 0%,rgba(43,196,189,.12),transparent 70%),transparent}
-h1{text-shadow:0 0 18px rgba(43,196,189,.35),4px 4px 0 var(--vino)}
-h1 em{text-shadow:0 0 14px var(--naranja),0 0 38px rgba(255,157,31,.7);color:var(--naranja)}
-.titulo-seccion{text-shadow:0 0 12px rgba(43,196,189,.7),0 0 34px rgba(43,196,189,.35)}
-.etiqueta{text-shadow:0 0 10px rgba(255,157,31,.8)}
-.genero{box-shadow:0 0 14px rgba(43,196,189,.45),inset 0 0 12px rgba(43,196,189,.15)}
-.frase{text-shadow:0 0 12px rgba(43,196,189,.6)}
-.btn-principal{box-shadow:0 0 16px rgba(255,157,31,.4),0 8px 0 #b25f00}
-.btn-principal:hover{box-shadow:0 0 24px rgba(255,157,31,.55),0 8px 0 #b25f00}
-.btn-sec{box-shadow:0 0 12px rgba(47,128,214,.5),inset 0 0 12px rgba(47,128,214,.2);border-color:var(--dorado)}
-.btn-sec:hover{background:rgba(43,196,189,.15);box-shadow:0 0 24px rgba(43,196,189,.7),inset 0 0 14px rgba(43,196,189,.3)}
-.metrica{border:1px solid rgba(43,196,189,.35);box-shadow:0 0 14px rgba(43,196,189,.15) inset}
-.metrica b,.dato .valor{text-shadow:0 0 12px rgba(43,196,189,.8)}
-kbd{box-shadow:0 0 10px rgba(43,196,189,.5);color:var(--dorado)}
-.marco,.retrato,.visor{border:2px solid var(--dorado);box-shadow:0 0 22px rgba(43,196,189,.55),0 0 70px rgba(163,21,58,.35)}
-.tarjeta{background:linear-gradient(160deg,rgba(16,42,52,.85),rgba(8,22,30,.92));border:1px solid rgba(163,21,58,.55);box-shadow:0 0 18px rgba(163,21,58,.22),inset 0 0 20px rgba(43,196,189,.05);transition:.25s}
-.tarjeta:hover{border-color:var(--dorado);box-shadow:0 0 26px rgba(43,196,189,.45),inset 0 0 22px rgba(43,196,189,.08)}
-.fondo-alt{background:linear-gradient(180deg,rgba(163,21,58,.10),rgba(8,22,30,.9))}
-.paso .num{background:var(--vino);border-color:var(--dorado);box-shadow:0 0 16px var(--vino),0 0 30px rgba(43,196,189,.4)}
-.cita{border-left-color:var(--naranja);box-shadow:-8px 0 18px -10px var(--naranja)}
-.hab .ico{border-color:var(--dorado);box-shadow:0 0 12px rgba(43,196,189,.5)}
-.rasgos span{border:1px solid rgba(255,157,31,.5);background:rgba(255,157,31,.08)}
-.reglas li:before{text-shadow:0 0 8px var(--naranja)}
-.victoria{border-top-color:var(--verde);box-shadow:0 -6px 22px -12px var(--verde)}
-.derrota{border-top-color:var(--naranja);box-shadow:0 -6px 22px -12px var(--naranja)}
-.chip{box-shadow:0 0 10px currentColor}
-.barra .relleno{background:linear-gradient(90deg,var(--vino),var(--naranja),var(--dorado));box-shadow:0 0 12px rgba(255,157,31,.7)}
-.barra .riel{box-shadow:0 0 0 1px rgba(43,196,189,.25)}
-#grafico line,#grafico path{filter:drop-shadow(0 0 4px #2bc4bd)}
-.visor .tapa b{text-shadow:0 0 14px var(--dorado),0 0 36px rgba(43,196,189,.6)}
-.aviso{border-left-color:var(--dorado);background:rgba(43,196,189,.08);box-shadow:0 0 16px rgba(43,196,189,.12)}
-.req li:before{text-shadow:0 0 8px var(--verde)}
-footer{border-top:1px solid rgba(43,196,189,.35);box-shadow:0 -4px 22px rgba(43,196,189,.12)}
-footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
-@media (prefers-reduced-motion:reduce){body:before{display:none}}
-
-/* ---------- GALERIA + IMAGENES ---------- */
+body{background:#07141b;-webkit-font-smoothing:antialiased}
+section{padding:110px 0}
+.fondo-alt{background:linear-gradient(180deg,#0a1a23,#08161d);border-block:1px solid var(--borde)}
+h1,h2,h3,.titulo-seccion,.logo,.metrica b,.dato .valor,.btn,.paso .num,.retrato .nombre,.visor .tapa b{font-family:var(--ft)}
+.titulo-seccion{font-weight:700;color:#fff;letter-spacing:-.02em;font-size:clamp(1.9rem,3.6vw,2.6rem);text-shadow:none}
+.titulo-seccion:after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--dorado),var(--naranja));margin-top:16px}
+.etiqueta{color:var(--dorado);font-size:.74rem;letter-spacing:.22em;text-shadow:none}
+header{background:rgba(7,20,27,.8);border-bottom:1px solid var(--borde);box-shadow:none}
+.logo{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;color:#fff;text-shadow:none}
+.logo span{color:var(--naranja);text-shadow:none}
+nav a.enlace{font-weight:500}
+nav a.enlace:hover{background:rgba(255,255,255,.06);color:#fff;box-shadow:none}
+nav a.enlace.activo{background:rgba(43,196,189,.1);color:var(--dorado);box-shadow:none}
+nav a.jugar{border-radius:10px;box-shadow:none}
+#inicio{background:radial-gradient(900px 500px at 80% 20%,rgba(43,196,189,.12),transparent 60%),radial-gradient(700px 400px at 5% 100%,rgba(255,157,31,.08),transparent 60%),#07141b}
+h1{font-weight:800;letter-spacing:-.035em;line-height:1.03;font-size:clamp(2.6rem,6.2vw,4.6rem);text-shadow:none}
+h1 em{color:var(--dorado);text-shadow:none}
+.genero{border-radius:8px;background:rgba(43,196,189,.1);border-color:rgba(43,196,189,.35);letter-spacing:.16em;box-shadow:none}
+.frase{font-weight:600;color:#fff;text-shadow:none;font-size:clamp(1.1rem,2vw,1.35rem)}
+.btn{border-radius:12px;padding:14px 26px;font-weight:600}
+.btn-principal{box-shadow:0 12px 26px -10px rgba(255,157,31,.6)}
+.btn-principal:hover{box-shadow:0 16px 30px -10px rgba(255,157,31,.7);transform:translateY(-2px)}
+.btn-sec{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.03);box-shadow:none}
+.btn-sec:hover{background:rgba(255,255,255,.08);border-color:var(--dorado);box-shadow:none}
+.metrica{background:var(--sup);border:1px solid var(--borde);box-shadow:none}
+.metrica b,.dato .valor{font-weight:700;color:#fff;text-shadow:none}
+.metrica b{font-size:1.5rem}.dato .valor{font-size:2.2rem}
+kbd{background:#14303b;border-color:rgba(255,255,255,.25);box-shadow:none;color:#fff}
+.marco,.retrato,.visor{border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
 .marco img.captura{object-fit:contain;background:#07141b}
-.retrato img{inset:2% 4% 13% 4%;width:92%;height:85%;filter:drop-shadow(0 0 18px rgba(43,196,189,.45))}
-.galeria{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
-.galeria figure{margin:0;border-radius:18px;overflow:hidden;border:2px solid rgba(163,21,58,.6);background:#07141b;box-shadow:0 0 18px rgba(163,21,58,.3);transition:.25s}
-.galeria figure:hover{border-color:var(--dorado);box-shadow:0 0 28px rgba(43,196,189,.55);transform:translateY(-4px)}
+.retrato{background:radial-gradient(circle at 50% 40%,#12505a,#07141b 70%)}
+.retrato img{inset:2% 4% 13% 4%;width:92%;height:85%;filter:drop-shadow(0 12px 24px rgba(0,0,0,.5))}
+.retrato .nombre{font-weight:700;letter-spacing:.24em;font-size:.95rem;color:#fff;text-shadow:none}
+.tarjeta{background:var(--sup);border:1px solid var(--borde);border-radius:16px;box-shadow:0 18px 40px -26px rgba(0,0,0,.9);transition:.25s}
+.tarjeta:hover{transform:translateY(-3px);border-color:rgba(43,196,189,.4);box-shadow:0 22px 44px -24px rgba(0,0,0,.9)}
+.paso .num{background:var(--sup);color:var(--dorado);border:1px solid rgba(43,196,189,.5);box-shadow:none;width:48px;height:48px;font-size:1.05rem;font-weight:700}
+.cita{border-left:3px solid var(--naranja);box-shadow:none;font-weight:500}
+.hab .ico{background:rgba(43,196,189,.1);border:1px solid rgba(43,196,189,.35);box-shadow:none}
+.rasgos span{background:rgba(255,255,255,.05);border:1px solid var(--borde)}
+.reglas li:before{color:var(--dorado);text-shadow:none}
+.victoria{border-top:3px solid var(--verde);box-shadow:none}
+.derrota{border-top:3px solid var(--vino);box-shadow:none}
+.chip{box-shadow:none}
+.barra .relleno{background:linear-gradient(90deg,var(--dorado),var(--naranja));box-shadow:none}
+.barra .riel{box-shadow:none}
+#grafico line,#grafico path{filter:none}
+.visor .tapa b{font-weight:700;text-shadow:none}
+.aviso{background:rgba(43,196,189,.07);border-left-color:var(--dorado);box-shadow:none}
+.req li:before{text-shadow:none}
+footer{background:#050f14;border-top:1px solid var(--borde);box-shadow:none}
+footer b{text-shadow:none}
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+.galeria figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--borde);background:var(--sup);transition:.25s}
+.galeria figure:hover{border-color:rgba(43,196,189,.45);transform:translateY(-4px);box-shadow:0 22px 44px -24px rgba(0,0,0,.9)}
 .galeria img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
-.galeria figcaption{padding:10px 14px;font-weight:600;font-size:.9rem;color:var(--dorado);text-shadow:0 0 8px rgba(43,196,189,.6);background:rgba(7,20,27,.85)}
-@media (max-width:700px){.galeria{grid-template-columns:1fr}}
+.galeria figcaption{padding:12px 16px;font-weight:600;font-size:.9rem;color:#fff;border-top:1px solid var(--borde)}
+@media (max-width:700px){.galeria{grid-template-columns:1fr}section{padding:76px 0}}
+
+/* ---------- DINAMISMO ---------- */
+#progreso{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--dorado),var(--naranja));z-index:70}
+.nav{transition:height .3s}
+header{transition:background .3s,box-shadow .3s}
+header.scrolled{background:rgba(5,15,20,.92);box-shadow:0 10px 30px -18px #000}
+header.scrolled .nav{height:56px}
+#luz{position:fixed;left:0;top:0;width:460px;height:460px;margin:-230px 0 0 -230px;border-radius:50%;pointer-events:none;z-index:45;background:radial-gradient(circle,rgba(43,196,189,.11),transparent 65%);mix-blend-mode:screen;transition:opacity .3s;opacity:0}
+.rev{opacity:0;transform:translateY(44px) scale(.97);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1),border-color .25s,box-shadow .25s}
+.rev.vis{opacity:1;transform:none}
+#inicio{position:relative;overflow:hidden}
+#inicio:before,#inicio:after{content:"";position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+#inicio:before{width:440px;height:440px;background:#2bc4bd;opacity:.28;top:-90px;right:-70px;animation:deriva 14s ease-in-out infinite alternate}
+#inicio:after{width:380px;height:380px;background:#ff9d1f;opacity:.18;bottom:-130px;left:-90px;animation:deriva 18s ease-in-out infinite alternate-reverse}
+@keyframes deriva{to{transform:translate(-90px,70px) scale(1.2)}}
+.hero{position:relative;z-index:1}
+h1 em{background:linear-gradient(90deg,#2bc4bd,#9ff3ec,#ff9d1f,#2bc4bd);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 7s linear infinite}
+@keyframes brillo{to{background-position:300% 0}}
+.hero h1,.hero .genero,.hero .botones,.hero .metricas,.hero .sintesis{animation:entra .9s cubic-bezier(.2,.7,.2,1) backwards}
+.hero .genero{animation-delay:.05s}.hero h1{animation-delay:.15s}.hero .sintesis{animation-delay:.45s}.hero .botones{animation-delay:.6s}.hero .metricas{animation-delay:.75s}
+.hero .marco{animation:entraD 1.1s .3s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes entra{from{opacity:0;transform:translateY(32px)}}
+@keyframes entraD{from{opacity:0;transform:translateX(60px) scale(.95)}}
+.tipea.escribiendo:after{content:"";display:inline-block;width:3px;height:1.1em;margin-left:4px;background:var(--naranja);vertical-align:-.15em;animation:parpadeo .7s steps(1) infinite}
+@keyframes parpadeo{50%{opacity:0}}
+.btn-principal{position:relative;overflow:hidden}
+.btn-principal:after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:destello 3.6s ease-in-out infinite}
+@keyframes destello{0%,55%{left:-70%}100%{left:130%}}
+.chapa{position:absolute;z-index:4;padding:7px 14px;border-radius:999px;font-weight:700;font-size:.82rem;background:rgba(7,20,27,.72);backdrop-filter:blur(8px);border:1px solid rgba(43,196,189,.45);animation:bob 4s ease-in-out infinite}
+.chapa.c1{top:14px;right:14px;color:var(--lima)}.chapa.c2{top:14px;left:14px;color:#ff6b81;animation-delay:-1.3s}.chapa.c3{right:14px;bottom:14px;color:var(--dorado);animation-delay:-2.6s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.retrato img{animation:flotar 5s ease-in-out infinite}
+@keyframes flotar{50%{transform:translateY(-14px) rotate(.8deg)}}
+.cinta{overflow:hidden;background:#0a1a23;border-block:1px solid var(--borde);padding:16px 0;white-space:nowrap}
+.pista{display:inline-flex;gap:0;animation:marquesina 32s linear infinite}
+.cinta:hover .pista{animation-play-state:paused}
+.pista span{font-family:var(--ft);font-weight:700;font-size:.95rem;letter-spacing:.22em;color:var(--suave);padding:0 26px}
+.pista span.m{color:var(--naranja);padding:0}
+@keyframes marquesina{to{transform:translateX(-50%)}}
+.galeria figure{cursor:zoom-in}
+.galeria img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.galeria figure:hover img{transform:scale(1.07)}
+.galeria figure{overflow:hidden}
+.lb{position:fixed;inset:0;display:grid;place-items:center;background:rgba(3,8,11,.93);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;cursor:zoom-out}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-width:92vw;max-height:84vh;border-radius:14px;transform:scale(.92);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 40px 90px -20px #000}
+.lb.on img{transform:none}
+.lb p{position:absolute;bottom:22px;color:var(--suave);font-weight:600}
+.titulo-seccion:after{transition:width .9s .25s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}h1 em{color:var(--dorado);-webkit-text-fill-color:currentColor}#luz{display:none}}
+
+/* ---------- DATOS DINAMICOS ---------- */
+.dato{position:relative;overflow:hidden}
+.dato:after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--dorado),var(--naranja));transition:transform 1s .5s}
+.dato.vis:after{transform:scaleX(1)}
+.dato .ico{font-size:1.7rem;width:56px;height:56px;margin:0 auto 12px;display:grid;place-items:center;border-radius:16px;background:rgba(43,196,189,.1);border:1px solid rgba(43,196,189,.3);transition:.4s}
+.dato:hover .ico{transform:rotate(-10deg) scale(1.15);background:rgba(255,157,31,.16);border-color:var(--naranja)}
+.dato .valor{font-family:var(--ft);font-weight:700;font-size:2.4rem;color:#fff}
+.sim-wrap{margin-top:26px;display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
+.sim h3,.sub{color:#fff;margin-bottom:6px}
+.sub{margin:44px 0 0;font-size:1.25rem}
+.ctl{display:flex;justify-content:space-between;margin-top:16px;font-size:.9rem;font-weight:600}
+.ctl b{color:var(--dorado);font-family:var(--ft)}
+input[type=range]{width:100%;margin-top:8px;accent-color:var(--naranja);cursor:pointer}
+.sim-top{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;margin-top:22px}
+.ring{position:relative;width:130px;height:130px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:10}
+.ring .rt{stroke:rgba(255,255,255,.08)}
+#anillo{stroke:url(#gR);stroke-linecap:round;stroke-dasharray:314.16;stroke-dashoffset:314.16;transition:stroke-dashoffset .25s}
+.rc{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.rc b{font-family:var(--ft);font-size:1.5rem;color:#fff}.rc small{font-size:.68rem;color:var(--suave)}
+.sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:rgba(255,255,255,.04);border:1px solid var(--borde);border-radius:12px;padding:10px 12px;font-size:.8rem;color:var(--suave)}
+.tile small{display:block;font-size:.66rem;letter-spacing:.1em}
+.tile b{font-family:var(--ft);font-size:1.35rem;color:#fff}
+.pista2{position:relative;height:60px;margin-top:22px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--borde);overflow:hidden}
+.pista2 .fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,rgba(43,196,189,.3),rgba(255,157,31,.35))}
+.pista2 .mk{position:absolute;top:50%;transform:translate(-50%,-50%);transition:.3s}
+.pista2 .mk.off{opacity:.15;transform:translate(-50%,-50%) scale(.6)}
+.pista2 .meta{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:1.4rem}
+.pista2 .perry{position:absolute;bottom:2px;height:54px;width:auto;transform:translateX(-50%);filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
+.pista2 .perry.corre{animation:trote .3s ease-in-out infinite alternate}
+@keyframes trote{to{transform:translateX(-50%) translateY(-6px) rotate(3deg)}}
+.estado{margin-top:14px;padding:11px 14px;border-radius:12px;font-weight:600;font-size:.92rem;text-align:center;background:rgba(255,255,255,.05);color:var(--suave)}
+.estado.ok{background:rgba(76,196,106,.16);color:var(--verde);animation:pop .6s cubic-bezier(.2,.9,.3,1.4)}
+@keyframes pop{from{transform:scale(.9)}}
+.acciones2{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.acciones2 .btn{padding:11px 22px;font-size:.92rem}
+#graf2{width:100%;height:auto;margin-top:8px;cursor:crosshair;touch-action:none}
+#graf2 text{fill:#9fc2c6;font-size:11px;font-family:Inter}
+#graf2 .ln{transition:stroke-dashoffset 1.8s cubic-bezier(.2,.8,.2,1)}
+.gauges{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:18px}
+.gauge{text-align:center;padding:22px 10px}
+.gw{position:relative;width:104px;height:104px;margin:0 auto 12px}
+.gw svg{width:100%;height:100%;transform:rotate(-90deg);transition:transform .4s}
+.gauge:hover .gw svg{transform:rotate(-90deg) scale(1.08)}
+.gw circle{fill:none;stroke-width:8}
+.gw .pg{stroke:rgba(255,255,255,.08)}
+.gw .arco{stroke-linecap:round;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1)}
+.gauge:nth-child(1) .arco{stroke:var(--dorado)}.gauge:nth-child(2) .arco{stroke:var(--naranja)}.gauge:nth-child(3) .arco{stroke:var(--azul)}.gauge:nth-child(4) .arco{stroke:var(--verde)}.gauge:nth-child(5) .arco{stroke:var(--lima)}
+.gw .num{position:absolute;inset:0;display:grid;place-content:center;font-family:var(--ft);font-weight:700;font-size:1.2rem;color:#fff}
+.gw .num small{font-size:.7rem;color:var(--suave);font-weight:500}
+.gauge h4{font-size:.85rem;color:var(--suave);font-weight:600}
+@media (max-width:900px){.sim-wrap{grid-template-columns:1fr}.gauges{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.gauges{grid-template-columns:1fr 1fr}.sim-top{grid-template-columns:1fr}.ring{margin:auto}}
+
+/* ---------- UNIFICACION (ideas del prototipo) ---------- */
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--naranja);outline-offset:3px}
+.logo i{font-style:normal;color:#ff4d5e}
+.marco img.captura{object-fit:cover}
+.musica{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid var(--borde);color:#fff;padding:8px 14px;border-radius:999px;font:600 .82rem Inter,sans-serif;cursor:pointer;transition:.25s;margin-left:10px}
+.musica:hover{border-color:var(--dorado)}
+.musica[aria-pressed=true]{border-color:var(--naranja);color:var(--naranja)}
+.eq{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.eq i{width:3px;height:4px;background:currentColor;border-radius:2px}
+.musica[aria-pressed=true] .eq i{animation:eq .7s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:-.3s!important}.eq i:nth-child(3){animation-delay:-.55s!important}
+@keyframes eq{to{height:14px}}
+@media (max-width:700px){.musica .t{display:none}.musica{padding:8px 11px}}
+.mision{display:inline-block;margin-top:22px;padding:9px 18px;border-radius:999px;font:700 .8rem var(--ft);letter-spacing:.14em;color:#07141b;background:linear-gradient(90deg,var(--dorado),var(--naranja))}
+.anims{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px}
+.anims-t{width:100%;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dorado)}
+.anims button{background:rgba(255,255,255,.05);border:1px solid var(--borde);color:#fff;padding:9px 16px;border-radius:12px;font:600 .88rem Inter,sans-serif;cursor:pointer;transition:.25s}
+.anims button:hover{border-color:var(--dorado);background:rgba(43,196,189,.12);transform:translateY(-2px)}
+.retrato img{transform-origin:50% 100%}
+.retrato img.a-correr{animation:trote2 .3s ease-in-out infinite alternate}
+.retrato img.a-saltar{animation:salta .9s cubic-bezier(.3,.7,.4,1)}
+.retrato img.a-agachar{animation:agacha 1.1s ease-in-out}
+.retrato img.a-morir{animation:muere 1.5s ease-in forwards}
+@keyframes trote2{to{transform:translateY(-10px) rotate(2deg)}}
+@keyframes salta{40%{transform:translateY(-70px) scale(1.04)}}
+@keyframes agacha{30%,70%{transform:scaleY(.62) scaleX(1.1)}}
+@keyframes muere{60%{transform:rotate(-14deg) translateY(10px)}100%{transform:rotate(-82deg) translate(-10px,30px);opacity:.55}}
+.obst{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:18px}
+.ob{position:relative;text-align:center;padding:22px 10px}
+.ob .em{display:block;font-size:2.4rem;transition:.35s}
+.ob:hover .em{transform:scale(1.25) rotate(-6deg)}
+.ob b{display:block;color:#fff;margin-top:6px}.ob small{color:var(--suave);font-size:.8rem}
+.ob .acc{position:absolute;top:10px;right:12px;font:700 1.1rem var(--ft);font-style:normal;color:var(--dorado)}
+.ob.mon{border-color:rgba(255,210,63,.4)}.ob.mon .acc,.ob.mon b{color:var(--lima)}
+.demo{position:relative;height:170px;margin-top:20px;border-radius:18px;overflow:hidden;border:1px solid var(--borde);background:linear-gradient(#0d2b45 0%,#3a7ca5 45%,#ffb347 66%,#0b1c26 66.5%)}
+.demo .suelo{position:absolute;inset:auto 0 0 0;height:33.5%;background:#0b1c26;border-top:2px solid rgba(255,255,255,.12)}
+.demo .dp{position:absolute;left:18%;bottom:12px;height:104px;width:auto;transform-origin:50% 100%;transform:translateX(-50%);animation:esquiva 8s linear infinite;filter:drop-shadow(0 6px 8px rgba(0,0,0,.5))}
+.demo .o1,.demo .o3{position:absolute;bottom:14px;font-size:2.2rem;left:110%;opacity:0}
+.demo .o1{animation:v1 8s linear infinite}.demo .o3{animation:v3 8s linear infinite;bottom:96px}
+.demo .o2{position:absolute;bottom:68px;left:110%;width:84px;height:12px;border-radius:6px;background:var(--naranja);box-shadow:0 0 0 3px #fff inset;opacity:0;animation:v2 8s linear infinite}
+.demo .o2:before,.demo .o2:after{content:"";position:absolute;top:12px;width:6px;height:56px;background:#c9d6da}
+.demo .o2:before{left:6px}.demo .o2:after{right:6px}
+.demo .tag1,.demo .tag2{position:absolute;top:12px;font:700 .75rem var(--ft);letter-spacing:.16em;padding:5px 12px;border-radius:999px;background:rgba(7,20,27,.7);border:1px solid var(--dorado);color:var(--dorado);opacity:0}
+.demo .tag1{left:calc(18% + 30px);animation:t1 8s linear infinite}.demo .tag2{left:calc(18% + 30px);animation:t2 8s linear infinite}
+@keyframes v1{0%{left:110%;opacity:1}50%{left:-12%;opacity:1}50.1%,100%{opacity:0}}
+@keyframes v2{0%,50%{opacity:0;left:110%}50.1%{opacity:1;left:110%}100%{left:-14%;opacity:1}}
+@keyframes v3{0%{left:110%;opacity:1}38%{opacity:1}40%{left:12%;opacity:0}100%{opacity:0}}
+@keyframes esquiva{0%,31%{transform:translateX(-50%)}34%{transform:translateX(-50%) translateY(-45px)}36.8%{transform:translateX(-50%) translateY(-78px)}39.5%{transform:translateX(-50%) translateY(-45px)}42%,80%{transform:translateX(-50%)}83%,90.5%{transform:translateX(-50%) scaleY(.55) scaleX(1.12)}93%,100%{transform:translateX(-50%)}}
+@keyframes t1{0%,25%{opacity:0}30%,42%{opacity:1}47%,100%{opacity:0}}
+@keyframes t2{0%,74%{opacity:0}78%,92%{opacity:1}96%,100%{opacity:0}}
+.hechos{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hechos span{padding:10px 18px;border-radius:999px;background:var(--sup);border:1px solid var(--borde);color:var(--suave);font-size:.88rem}
+.hechos b{color:#fff;font-family:var(--ft);margin-right:4px}
+.galeria figure:first-child{grid-column:1/-1}
+.galeria figure:first-child img{aspect-ratio:21/9}
+@media (max-width:900px){.obst{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.obst{grid-template-columns:1fr 1fr}.demo .dp{height:84px}}
+@media (prefers-reduced-motion:reduce){.demo .o1,.demo .o2,.demo .o3{opacity:1;left:60%}.demo .tag1{opacity:1}}
 </style>
 </head>
 <body>
+<div id="progreso"></div><div id="luz"></div>
 
 <!-- ============ 1. ENCABEZADO DE NAVEGACION ============ -->
 <header>
   <div class="contenedor nav">
-    <a href="#inicio" class="logo" aria-label="Perry Runner 3D, inicio">PERRY<span>RUNNER</span> 3D</a>
+    <a href="#inicio" class="logo" aria-label="Perry Runner 3D, inicio">🎩 PERRY <span>RUNNER</span> <i>3D</i></a>
     <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
     <nav aria-label="Principal">
       <ul id="menu">
@@ -244,6 +415,7 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
         <li><a class="jugar" href="#jugar">Jugar ahora</a></li>
       </ul>
     </nav>
+    <button class="musica" id="musica" type="button" aria-pressed="false" aria-label="Activar música"><span class="eq"><i></i><i></i><i></i></span><span class="t">Música</span></button>
   </div>
 </header>
 
@@ -252,7 +424,7 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
 <section id="inicio">
   <div class="contenedor hero">
     <div>
-      <span class="genero">ENDLESS RUNNER 3D</span>
+      <span class="genero">AVENTURA UNIVERSITARIA · ENDLESS RUNNER 3D</span>
       <h1>PERRY<br><em>RUNNER</em> 3D</h1>
       <p class="frase">¡Corre, esquiva y llega a tiempo a clase!</p>
       <p class="sintesis">Perry va tarde a clases y la avenida del campus está llena de obstáculos. El conflicto es contra el reloj y contra el camino: cada golpe cuesta una vida. La meta de la partida es acumular <b>1000 puntos</b> sin quedarse sin vidas y conseguir el <b>nuevo récord</b>.</p>
@@ -267,20 +439,15 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
       </div>
     </div>
     <div class="marco">
-      <div class="escena" aria-hidden="true">
-        <div class="edif a"></div><div class="edif b"></div><div class="edif c"></div><div class="edif d"></div>
-        <div class="via"></div>
-        <div class="raya"></div><div class="raya"></div><div class="raya"></div><div class="raya"></div>
-        <div class="valla"></div>
-        <div class="moneda m1"></div><div class="moneda m2"></div><div class="moneda m3"></div>
-        <div class="letra">AVENIDA DEL CAMPUS</div>
-      </div>
       <!-- Pon tu captura en assets/captura.png (se verá encima de la ilustración) -->
-      <img class="captura" src="assets/captura.png" alt="Captura de pantalla de Perry Runner 3D" onerror="this.remove()">
-      <span class="insignia">Perry Runner 3D · Unity</span>
+      <img class="captura" src="assets/escena.jpg" alt="Perry corriendo por una avenida de La Paz con el Illimani y los teleféricos al fondo" onerror="this.remove()">
+      <span class="chapa c1">+25 ⭐ moneda</span><span class="chapa c2">♥ ♥ ♥</span><span class="chapa c3">11 u/s ⚡</span>
+      <span class="insignia">Arte conceptual · La Paz</span>
     </div>
   </div>
 </section>
+
+<div class="cinta" aria-hidden="true"><div class="pista"><span>SALTA ↑</span><span class="m">★</span><span>DESLÍZATE ↓</span><span class="m">★</span><span>JUNTA MONEDAS</span><span class="m">★</span><span>ESQUIVA VALLAS</span><span class="m">★</span><span>LLEGA A CLASES</span><span class="m">★</span><span>SUPERA LOS 1000 PUNTOS</span><span class="m">★</span><span>SALTA ↑</span><span class="m">★</span><span>DESLÍZATE ↓</span><span class="m">★</span><span>JUNTA MONEDAS</span><span class="m">★</span><span>ESQUIVA VALLAS</span><span class="m">★</span><span>LLEGA A CLASES</span><span class="m">★</span><span>SUPERA LOS 1000 PUNTOS</span><span class="m">★</span></div></div>
 
 <!-- ============ 3. HISTORIA ============ -->
 <section id="historia" class="fondo-alt">
@@ -294,6 +461,7 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
         <p style="color:var(--suave);margin-bottom:14px">El universo del juego es un campus universitario vivo: una gran avenida bordeada por edificios de ladrillo y cristal, con el pórtico de entrada, la biblioteca, el auditorio, la cafetería, el comedor y los edificios de Ingeniería, Ciencias y Laboratorios. Es un lugar cotidiano, pero a toda velocidad se convierte en una pista llena de riesgos.</p>
         <p style="color:var(--suave)">La partida comienza en un día cualquiera con un problema muy reconocible para la comunidad académica: <b style="color:#fff">se hizo tarde</b>. Obras, vallas y barras atraviesan la avenida y el tiempo no espera.</p>
         <p class="cita">“Perry llega tarde a clases. ¡Corre por la avenida del campus, esquiva los obstáculos y junta monedas!”</p>
+    <span class="mision">🎯 MISIÓN: LLEGAR A CLASES</span>
       </div>
       <div class="linea">
         <div class="paso rev"><div class="num">1</div><div><h3>Planteamiento</h3><p>Perry sale con el tiempo justo y debe cruzar el campus entero antes de que empiece la clase.</p></div></div>
@@ -320,6 +488,10 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
         <div class="hab"><div class="ico">⤴</div><div><b>Salto</b><p>Supera las vallas bajas naranjas con un salto de hasta 2,6 m de altura.</p></div></div>
         <div class="hab"><div class="ico">⤵</div><div><b>Deslizamiento</b><p>Se agacha y se desliza durante 1,1 s para pasar bajo las barras altas; su colisión se reduce a la mitad de la altura.</p></div></div>
         <div class="hab"><div class="ico">✦</div><div><b>Invulnerabilidad breve</b><p>Tras un golpe parpadea y es invulnerable durante 1,2 s para recuperar el ritmo.</p></div></div>
+      </div>
+      <div class="anims" role="group" aria-label="Las 4 animaciones de Perry">
+        <span class="anims-t">Las 4 animaciones · pruébalas</span>
+        <button type="button" data-a="correr">🏃 Correr</button><button type="button" data-a="saltar">⬆️ Saltar</button><button type="button" data-a="agachar">⬇️ Agacharse</button><button type="button" data-a="morir">💫 Morir</button>
       </div>
       <div class="rasgos"><span>Sombrero de detective</span><span>Modelo 3D animado</span><span>Altura de 2 m en el juego</span><span>Animaciones: correr, saltar, deslizarse y caer</span></div>
     </div>
@@ -353,6 +525,21 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
         <div class="tarjeta derrota rev"><h3>💥 Condición de derrota</h3><p style="color:var(--suave)">Chocar con un obstáculo cuando ya no quedan vidas. Aparece “JUEGO TERMINADO” con la puntuación final.</p></div>
       </div>
     </div>
+
+    <h3 class="sub">Obstáculos y objetos del camino</h3>
+    <div class="obst">
+      <div class="tarjeta ob rev"><span class="em">🚧</span><b>Valla baja</b><small>Se salta</small><i class="acc">↑</i></div>
+      <div class="tarjeta ob rev"><span class="em">🏗️</span><b>Barra alta</b><small>Se esquiva deslizándote</small><i class="acc">↓</i></div>
+      <div class="tarjeta ob rev"><span class="em">🚦</span><b>Conos</b><small>Decoración del camino</small><i class="acc">·</i></div>
+      <div class="tarjeta ob rev"><span class="em">📦</span><b>Cajas</b><small>Decoración del camino</small><i class="acc">·</i></div>
+      <div class="tarjeta ob rev mon"><span class="em">🪙</span><b>Monedas</b><small>+25 puntos cada una</small><i class="acc">★</i></div>
+    </div>
+    <div class="demo rev" aria-label="Demostración: Perry salta una valla y se desliza bajo una barra">
+      <div class="sol"></div><div class="suelo"></div>
+      <img class="dp" src="assets/personaje.png" alt="">
+      <span class="o1">🚧</span><span class="o2"></span><span class="o3">🪙</span>
+      <span class="tag1">↑ SALTA</span><span class="tag2">↓ DESLÍZATE</span>
+    </div>
   </div>
 </section>
 
@@ -363,30 +550,46 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
     <h2 class="titulo-seccion">Datos e infografía</h2>
     <p class="bajada">Los parámetros de diseño del juego, tal como están configurados en Unity.</p>
     <div class="grid3">
-      <div class="tarjeta dato rev"><div class="valor" data-n="1000">0</div><div class="unidad">PUNTOS OBJETIVO</div><p>Puntuación necesaria para ganar la partida.</p></div>
-      <div class="tarjeta dato rev"><div class="valor" data-n="3">0</div><div class="unidad">VIDAS</div><p>Golpes que puedes recibir antes de perder.</p></div>
-      <div class="tarjeta dato rev"><div class="valor" data-n="2">0</div><div class="unidad">TIPOS DE OBSTÁCULO</div><p>Valla baja (saltar) y barra alta (deslizarse).</p></div>
-      <div class="tarjeta dato rev"><div class="valor" data-n="11">0</div><div class="unidad">u/s · VELOCIDAD INICIAL</div><p>Crece 0,18 u/s cada segundo.</p></div>
-      <div class="tarjeta dato rev"><div class="valor" data-n="25">0</div><div class="unidad">PUNTOS POR MONEDA</div><p>Premio extra por arriesgarse.</p></div>
-      <div class="tarjeta dato rev"><div class="valor" data-n="10">0</div><div class="unidad">PUNTOS POR SEGUNDO</div><p>Se acumulan solo por sobrevivir.</p></div>
+      <div class="tarjeta dato rev"><div class="ico">🏆</div><div class="valor" data-n="1000">0</div><div class="unidad">PUNTOS OBJETIVO</div><p>Puntuación necesaria para ganar la partida.</p></div>
+      <div class="tarjeta dato rev"><div class="ico">❤️</div><div class="valor" data-n="3">0</div><div class="unidad">VIDAS</div><p>Golpes que puedes recibir antes de perder.</p></div>
+      <div class="tarjeta dato rev"><div class="ico">🚧</div><div class="valor" data-n="2">0</div><div class="unidad">TIPOS DE OBSTÁCULO</div><p>Valla baja (saltar) y barra alta (deslizarse).</p></div>
+      <div class="tarjeta dato rev"><div class="ico">⚡</div><div class="valor" data-n="11">0</div><div class="unidad">u/s · VELOCIDAD INICIAL</div><p>Crece 0,18 u/s cada segundo.</p></div>
+      <div class="tarjeta dato rev"><div class="ico">🪙</div><div class="valor" data-n="25">0</div><div class="unidad">PUNTOS POR MONEDA</div><p>Premio extra por arriesgarse.</p></div>
+      <div class="tarjeta dato rev"><div class="ico">⏱️</div><div class="valor" data-n="10">0</div><div class="unidad">PUNTOS POR SEGUNDO</div><p>Se acumulan solo por sobrevivir.</p></div>
     </div>
 
-    <div class="infografia">
-      <div class="tarjeta rev">
-        <h3>Parámetros de movimiento y reacción</h3>
-        <div class="barra"><div class="t"><span>Altura del salto</span><span>2,6 m</span></div><div class="riel"><div class="relleno" data-w="87"></div></div></div>
-        <div class="barra"><div class="t"><span>Duración del deslizamiento</span><span>1,1 s</span></div><div class="riel"><div class="relleno" data-w="55"></div></div></div>
-        <div class="barra"><div class="t"><span>Invulnerabilidad tras un golpe</span><span>1,2 s</span></div><div class="riel"><div class="relleno" data-w="60"></div></div></div>
-        <div class="barra"><div class="t"><span>Intervalo entre obstáculos (máx.)</span><span>2,4 s</span></div><div class="riel"><div class="relleno" data-w="80"></div></div></div>
-        <div class="barra"><div class="t"><span>Intervalo entre obstáculos (mín.)</span><span>1,3 s</span></div><div class="riel"><div class="relleno" data-w="43"></div></div></div>
-        <p class="nota">Las barras comparan cada valor contra un máximo de referencia de su misma escala.</p>
+    <div class="sim-wrap">
+      <div class="tarjeta sim rev" id="sim">
+        <h3>🎮 Simulador de partida</h3>
+        <p class="nota">Mueve los controles o presiona simular para ver cómo crecen la velocidad y los puntos.</p>
+        <label class="ctl"><span>Tiempo sobrevivido</span><b id="o-t">0 s</b></label>
+        <input type="range" id="rt" min="0" max="100" step="0.5" value="0" aria-label="Tiempo sobrevivido">
+        <label class="ctl"><span>Monedas juntadas</span><b id="o-c">0</b></label>
+        <input type="range" id="rc" min="0" max="40" step="1" value="0" aria-label="Monedas juntadas">
+        <div class="sim-top">
+          <div class="ring"><svg viewBox="0 0 120 120"><defs><linearGradient id="gR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2bc4bd"/><stop offset="1" stop-color="#ff9d1f"/></linearGradient></defs><circle cx="60" cy="60" r="50" class="rt"/><circle id="anillo" cx="60" cy="60" r="50"/></svg><div class="rc"><b id="v-p">0%</b><small>del objetivo</small></div></div>
+          <div class="sim-grid">
+            <div class="tile"><small>VELOCIDAD</small><b id="v-v">11</b> u/s</div>
+            <div class="tile"><small>DISTANCIA</small><b id="v-d">0</b> u</div>
+            <div class="tile"><small>OBSTÁCULOS ≈</small><b id="v-o">0</b></div>
+            <div class="tile"><small>PUNTOS</small><b id="v-s">0</b></div>
+          </div>
+        </div>
+        <div class="pista2" id="pista2"><div class="fill" id="fill"></div><span class="mk" data-p="20" style="left:20%">⭐</span><span class="mk" data-p="40" style="left:40%">⭐</span><span class="mk" data-p="60" style="left:60%">⭐</span><span class="mk" data-p="80" style="left:80%">⭐</span><span class="meta">🏁</span></div>
+        <div class="estado" id="estado"></div>
+        <div class="acciones2"><button class="btn btn-principal" id="bplay" type="button">▶ Simular partida</button><button class="btn btn-sec" id="breset" type="button">↺ Reiniciar</button></div>
       </div>
       <div class="tarjeta rev">
-        <h3>Velocidad del mundo en el tiempo</h3>
-        <svg id="grafico" viewBox="0 0 320 210" role="img" aria-label="Gráfica de velocidad contra tiempo"></svg>
-        <p class="nota">Sin recoger monedas, la victoria llega a los 100 s (1000 ÷ 10) con el mundo a 29 u/s.</p>
+        <h3>📈 Velocidad del mundo en el tiempo</h3>
+        <svg id="graf2" viewBox="0 0 320 210" role="img" aria-label="Gráfica de velocidad contra tiempo"></svg>
+        <p class="nota">Pasa el mouse o desliza sobre la gráfica para moverte en el tiempo. Sin monedas, la victoria llega a los 100 s con el mundo a 29 u/s.</p>
       </div>
     </div>
+    <h3 class="sub">Parámetros de movimiento y reacción</h3>
+    <div class="gauges" id="gauges"></div>
+    <p class="nota">Cada anillo compara el valor contra un máximo de referencia de su misma escala.</p>
+    <div class="hechos"><span><b>3D</b> escenario</span><span><b>4</b> animaciones</span><span><b>∞</b> carrera continua</span><span><b>Low Poly</b> estilo cartoon</span></div>
+    <svg id="grafico" hidden></svg>
   </div>
 </section>
 
@@ -397,6 +600,7 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
     <h2 class="titulo-seccion">Galería</h2>
     <p style="color:var(--suave);max-width:60ch">Así se ve Perry Runner 3D en acción: esquivando obstáculos, sumando monedas y rompiendo récords.</p>
     <div class="galeria">
+      <figure><img src="assets/captura.png" alt="Captura real del juego con el marcador y la avenida" loading="lazy"><figcaption>Juego real en Unity · puntos, vidas y velocidad en pantalla</figcaption></figure>
       <figure><img src="assets/galeria-1.jpg" alt="Perry corriendo y esquivando un cono en la calle" loading="lazy"><figcaption>Carrera en la ciudad</figcaption></figure>
       <figure><img src="assets/galeria-2.jpg" alt="Perry saltando un obstáculo a mayor velocidad" loading="lazy"><figcaption>Más velocidad, más reto</figcaption></figure>
       <figure><img src="assets/galeria-3.jpg" alt="Pantalla de juego terminado con puntuación final" loading="lazy"><figcaption>Pantalla de juego terminado</figcaption></figure>
@@ -449,7 +653,7 @@ footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
 <footer>
   <div class="contenedor">
     <p><b>PERRY RUNNER 3D</b> · Proyecto de Game Development · Universidad del Valle</p>
-    <p>Desarrollado por <b>[TU NOMBRE]</b> · Hecho con Unity</p>
+    <p>Desarrollado por <b>José Mario Macuchapi Villa - Mijhail Alvaro Vichini Fernandez</b> · Hecho con Unity</p>
   </div>
 </footer>
 
@@ -500,8 +704,11 @@ document.querySelectorAll('.rev').forEach(el=>obsRev.observe(el));
 
 // --- Juego: carga al hacer clic, pantalla completa y teclas ---
 const tapa=document.getElementById('tapa'), frame=document.getElementById('juego'), visor=document.getElementById('visor');
-function cargarJuego(){
-  if(!frame.getAttribute('src')) frame.setAttribute('src',frame.dataset.src);
+async function cargarJuego(){
+  if(!frame.getAttribute('src')){
+    try{ const r=await fetch(frame.dataset.src,{method:'HEAD',cache:'no-store'}); if(!r.ok) throw 0; frame.setAttribute('src',frame.dataset.src); }
+    catch(e){ tapa.querySelector('b').textContent='⚠ Juego aún no instalado'; tapa.querySelector('span').textContent='Exporta Unity (Web), copia index.html, Build y TemplateData dentro de juego/ y abre el portal desde un servidor web o GitHub Pages.'; return; }
+  }
   tapa.classList.add('oculta'); frame.focus();
 }
 tapa.addEventListener('click',cargarJuego);
@@ -515,6 +722,162 @@ let sobreJuego=false;
 visor.addEventListener('mouseenter',()=>sobreJuego=true);
 visor.addEventListener('mouseleave',()=>sobreJuego=false);
 window.addEventListener('keydown',e=>{ if(sobreJuego&&['ArrowUp','ArrowDown','Space'].includes(e.code)) e.preventDefault(); },{passive:false});
+
+// ===== DINAMISMO =====
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const barra=document.getElementById('progreso'), cab=document.querySelector('header');
+  function alScroll(){
+    const h=document.documentElement.scrollHeight-innerHeight;
+    barra.style.transform='scaleX('+(h>0?scrollY/h:0)+')';
+    cab.classList.toggle('scrolled',scrollY>20);
+  }
+  addEventListener('scroll',alScroll,{passive:true}); alScroll();
+  if(reduce) return;
+  // escalonado de aparición
+  document.querySelectorAll('.rev').forEach(el=>{
+    const hermanos=[...el.parentElement.children].filter(c=>c.classList.contains('rev'));
+    el.style.transitionDelay=(hermanos.indexOf(el)*110)+'ms,'+(hermanos.indexOf(el)*110)+'ms,0s,0s';
+    const o=new IntersectionObserver(es=>{ if(es[0].isIntersecting){ setTimeout(()=>el.style.transitionDelay='',1500); o.disconnect(); }},{threshold:.2});
+    o.observe(el);
+  });
+  // texto que se escribe
+  const f=document.querySelector('.frase');
+  if(f){ const t=f.textContent; f.textContent=''; f.classList.add('tipea','escribiendo'); let i=0;
+    setTimeout(function w(){ f.textContent=t.slice(0,++i); if(i<t.length) setTimeout(w,38); else setTimeout(()=>f.classList.remove('escribiendo'),1800); },900); }
+  // contador del héroe
+  const m=document.querySelector('.metrica b');
+  if(m && /^\d+$/.test(m.textContent.trim())){ const fin=+m.textContent, t0=performance.now()+700;
+    m.textContent='0'; requestAnimationFrame(function p(t){ const k=Math.max(0,Math.min((t-t0)/1500,1)); m.textContent=Math.round(fin*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(p); }); }
+  if(!matchMedia('(hover:hover)').matches) return;
+  // luz que sigue al cursor
+  const luz=document.getElementById('luz');
+  addEventListener('pointermove',e=>{ luz.style.opacity=1; luz.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)'; },{passive:true});
+  document.addEventListener('mouseleave',()=>luz.style.opacity=0);
+  // inclinación 3D
+  document.querySelectorAll('.marco,.retrato,.tarjeta,.galeria figure').forEach(el=>{
+    const g=el.matches('.tarjeta')?6:9;
+    el.addEventListener('pointermove',e=>{
+      const r=el.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      el.style.transition='transform .1s';
+      el.style.transform='perspective(900px) rotateX('+(-y*g)+'deg) rotateY('+(x*g)+'deg) translateY(-4px)';
+    });
+    el.addEventListener('pointerleave',()=>{ el.style.transition=''; el.style.transform=''; });
+  });
+})();
+// ===== Galería ampliada =====
+(function(){
+  const lb=document.createElement('div'); lb.className='lb'; lb.innerHTML='<img alt=""><p></p>'; document.body.appendChild(lb);
+  const im=lb.querySelector('img'), tx=lb.querySelector('p');
+  document.querySelectorAll('.galeria figure').forEach(fg=>fg.addEventListener('click',()=>{
+    const a=fg.querySelector('img'); im.src=a.src; im.alt=a.alt; tx.textContent=fg.querySelector('figcaption').textContent+' · clic para cerrar'; lb.classList.add('on'); }));
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); });
+})();
+
+// ===== DATOS DINAMICOS =====
+(function(){
+  const $=id=>document.getElementById(id), fmt=(n,d=0)=>n.toLocaleString('es',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // anillos de parámetros
+  const G=[['Altura del salto',2.6,'m',87,'⬆️'],['Duración del deslizamiento',1.1,'s',55,'⬇️'],['Invulnerabilidad tras golpe',1.2,'s',60,'🛡️'],['Intervalo entre obstáculos (máx.)',2.4,'s',80,'⏱️'],['Intervalo entre obstáculos (mín.)',1.3,'s',43,'⚡']];
+  const C=2*Math.PI*34;
+  $('gauges').innerHTML=G.map((g,i)=>`<div class="tarjeta gauge rev" style="transition-delay:${i*110}ms,${i*110}ms,0s,0s"><div class="gw"><svg viewBox="0 0 80 80"><circle class="pg" cx="40" cy="40" r="34"/><circle class="arco" cx="40" cy="40" r="34" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-p="${g[3]}"/></svg><div class="num"><span data-v="${g[1]}">0</span><small>${g[2]}</small></div></div><h4>${g[4]} ${g[0]}</h4></div>`).join('');
+  document.querySelectorAll('.gauge').forEach(el=>{
+    const o=new IntersectionObserver(es=>{ if(!es[0].isIntersecting) return; o.disconnect();
+      el.classList.add('vis'); setTimeout(()=>el.style.transitionDelay='',1500);
+      const arc=el.querySelector('.arco'); arc.style.strokeDashoffset=C*(1-arc.dataset.p/100);
+      const sp=el.querySelector('[data-v]'), fin=+sp.dataset.v, t0=performance.now();
+      requestAnimationFrame(function f(t){ const k=Math.min((t-t0)/1500,1); sp.textContent=fmt(fin*(1-Math.pow(1-k,3)),1); if(k<1) requestAnimationFrame(f); });
+    },{threshold:.4}); o.observe(el);
+  });
+  // gráfica
+  const svg=$('graf2'), x0=38,x1=306,y0=180,y1=14,vmax=32,v0=11,a=.18,T=100;
+  const X=t=>x0+(x1-x0)*t/T, Y=v=>y0-(y0-y1)*v/vmax;
+  let g='';
+  [0,10,20,30].forEach(v=>g+=`<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="rgba(255,255,255,.1)"/><text x="${x0-6}" y="${Y(v)+4}" text-anchor="end">${v}</text>`);
+  [0,25,50,75,100].forEach(t=>g+=`<text x="${X(t)}" y="${y0+16}" text-anchor="middle">${t}s</text>`);
+  const L=Math.hypot(X(T)-X(0),Y(v0+a*T)-Y(v0));
+  g+=`<defs><linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9d1f" stop-opacity=".35"/><stop offset="1" stop-color="#ff9d1f" stop-opacity="0"/></linearGradient></defs>`;
+  g+=`<path d="M${X(0)} ${Y(v0)} L${X(T)} ${Y(v0+a*T)} L${X(T)} ${y0} L${X(0)} ${y0} Z" fill="url(#gA)"/>`;
+  g+=`<line class="ln" id="ln" x1="${X(0)}" y1="${Y(v0)}" x2="${X(T)}" y2="${Y(v0+a*T)}" stroke="#2bc4bd" stroke-width="3" stroke-linecap="round" stroke-dasharray="${L}" stroke-dashoffset="${L}"/>`;
+  g+=`<line id="mkl" y1="${y1}" y2="${y0}" stroke="#ff9d1f" stroke-dasharray="4 4" opacity=".8"/><circle id="mkc" r="6" fill="#ff9d1f" stroke="#fff" stroke-width="2"/><text id="mkt" style="fill:#fff;font-weight:700"></text>`;
+  svg.innerHTML=g;
+  // simulador
+  const rt=$('rt'), rc=$('rc'), R=314.16, perry=document.querySelector('.retrato img');
+  const pista=$('pista2'); let pj;
+  if(perry){ pj=document.createElement('img'); pj.src=perry.src; pj.alt=''; pj.className='perry'; } else { pj=document.createElement('span'); pj.className='perry'; pj.textContent='🦆'; pj.style.fontSize='2rem'; }
+  pista.appendChild(pj);
+  let t=0, play=false, last=0, ganado=false;
+  const tw=()=>Math.max(0,(1000-25*rc.value)/10);
+  function render(){
+    const c=+rc.value, v=v0+a*t, d=v0*t+a*t*t/2, pts=10*t+25*c, pct=Math.min(100,pts/10), ok=pts>=1000;
+    $('o-t').textContent=fmt(t,0)+' s'; $('o-c').textContent=c;
+    $('v-v').textContent=fmt(v,1); $('v-d').textContent=fmt(d,0); $('v-o').textContent=Math.floor(t/1.85); $('v-s').textContent=fmt(pts,0);
+    $('v-p').textContent=fmt(pct,0)+'%'; $('anillo').style.strokeDashoffset=R*(1-pct/100);
+    $('fill').style.width=pct+'%'; pj.style.left=Math.min(94,Math.max(5,pct))+'%'; pj.classList.toggle('corre',play&&!ok);
+    pista.querySelectorAll('.mk').forEach(m=>m.classList.toggle('off',pct>=+m.dataset.p));
+    const e=$('estado');
+    if(ok){ if(!ganado){ e.classList.remove('ok'); void e.offsetWidth; } e.classList.add('ok'); e.textContent='🏆 ¡NUEVO RÉCORD! Superaste los 1000 puntos'; }
+    else { e.classList.remove('ok'); e.textContent='Faltan '+fmt(1000-pts,0)+' puntos · victoria en '+fmt(Math.max(0,tw()-t),0)+' s'; }
+    ganado=ok;
+    const x=X(t), y=Y(v), mk=$('mkt');
+    $('mkl').setAttribute('x1',x); $('mkl').setAttribute('x2',x); $('mkc').setAttribute('cx',x); $('mkc').setAttribute('cy',y);
+    mk.textContent=fmt(v,1)+' u/s'; mk.setAttribute('x',x+(t>70?-10:10)); mk.setAttribute('y',y-12); mk.setAttribute('text-anchor',t>70?'end':'start');
+  }
+  function paso(now){
+    if(!play) return;
+    t=Math.min(100,t+(now-last)/1000*8); last=now; rt.value=t; render();
+    if(t>=100||(+rc.value*25+10*t>=1000)){ play=false; $('bplay').textContent='▶ Simular partida'; render(); return; }
+    requestAnimationFrame(paso);
+  }
+  function iniciar(){
+    if(t>=100||10*t+25*rc.value>=1000){ t=0; rt.value=0; }
+    play=true; last=performance.now(); $('bplay').textContent='⏸ Pausar'; requestAnimationFrame(paso);
+  }
+  $('bplay').addEventListener('click',()=>{ if(play){ play=false; $('bplay').textContent='▶ Simular partida'; render(); } else iniciar(); });
+  $('breset').addEventListener('click',()=>{ play=false; t=0; rt.value=0; $('bplay').textContent='▶ Simular partida'; render(); });
+  rt.addEventListener('input',()=>{ play=false; $('bplay').textContent='▶ Simular partida'; t=+rt.value; render(); });
+  rc.addEventListener('input',render);
+  function mover(e){ const r=svg.getBoundingClientRect(), x=(e.clientX-r.left)/r.width*320; play=false; $('bplay').textContent='▶ Simular partida'; t=Math.max(0,Math.min(T,(x-x0)/(x1-x0)*T)); rt.value=t; render(); }
+  svg.addEventListener('pointermove',mover); svg.addEventListener('pointerdown',mover);
+  render();
+  // aparición: dibuja la línea y arranca una demo
+  const sim=$('sim'), oS=new IntersectionObserver(es=>{ if(!es[0].isIntersecting) return; oS.disconnect();
+    $('ln').style.strokeDashoffset=0; setTimeout(()=>sim.style.transitionDelay='',1500);
+    if(!rm) setTimeout(()=>{ if(!play&&t===0) iniciar(); },900);
+  },{threshold:.35}); oS.observe(sim);
+})();
+
+// ===== MUSICA (melodía sintetizada con Web Audio) =====
+(function(){
+  const b=document.getElementById('musica'); let ctx=null,timer=null,step=0;
+  const N=[196,196,293.66,392,349.23,293.66,261.63,293.66,196,246.94,293.66,440,392,349.23,293.66,246.94];
+  function nota(f,t,d,ty,v){ const o=ctx.createOscillator(),g=ctx.createGain(); o.type=ty; o.frequency.value=f;
+    g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(v,t+.015); g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(g).connect(ctx.destination); o.start(t); o.stop(t+d+.02); }
+  function secuencia(){ if(!ctx) return; const now=ctx.currentTime+.03;
+    for(let i=0;i<8;i++){ const x=N[(step+i)%N.length]; nota(x,now+i*.19,.15,'sawtooth',.018); if(i%2===0) nota(x/2,now+i*.19,.28,'triangle',.035); }
+    step=(step+8)%N.length; }
+  function parar(){ clearInterval(timer); timer=null; if(ctx) ctx.suspend(); b.setAttribute('aria-pressed','false'); b.setAttribute('aria-label','Activar música'); }
+  b.addEventListener('click',async()=>{
+    try{
+      if(timer){ parar(); return; }
+      if(!ctx){ const A=window.AudioContext||window.webkitAudioContext; if(!A) throw 0; ctx=new A(); }
+      await ctx.resume(); secuencia(); timer=setInterval(secuencia,1520);
+      b.setAttribute('aria-pressed','true'); b.setAttribute('aria-label','Silenciar música');
+    }catch(e){ b.querySelector('.t').textContent='Sin audio'; }
+  });
+  document.addEventListener('visibilitychange',()=>{ if(document.hidden&&timer) parar(); });
+})();
+// ===== Animaciones de Perry =====
+(function(){
+  const img=document.querySelector('.retrato img'); if(!img) return; let tm;
+  document.querySelectorAll('.anims button').forEach(bt=>bt.addEventListener('click',()=>{
+    img.className=''; void img.offsetWidth; img.classList.add('a-'+bt.dataset.a);
+    clearTimeout(tm); tm=setTimeout(()=>img.className='',{correr:2600,saltar:900,agachar:1100,morir:2100}[bt.dataset.a]);
+  }));
+})();
 </script>
 </body>
 </html>

@@ -51,7 +51,7 @@ El mundo parte a **11 u/s** y acelera **0,18 u/s cada segundo**, así que el jue
 
 - **Unity 6** (6000.6.1f1), scripts en C#
 - Build **Web** (WebGL) publicada con **GitHub Pages**
-- Portal en HTML, CSS y JavaScript puro, sin dependencias
+- Portal en HTML, CSS y JavaScript puro, con música sintetizada (Web Audio), simulador de partida y demo de esquive
 
 ---
 
@@ -64,7 +64,8 @@ PERRYRUN/
 ├── .nojekyll         Evita que GitHub Pages procese los archivos con Jekyll
 ├── assets/
 │   ├── personaje.png     Imagen de Perry (fondo transparente)
-│   ├── captura.png       Captura principal del juego
+│   ├── escena.jpg        Arte conceptual de portada (La Paz, Illimani y teleféricos)
+│   ├── captura.png       Captura real del juego
 │   └── galeria-1..4.jpg  Capturas de la galería
 └── juego/            Build Web de Unity (lo que se carga al presionar "Jugar")
     ├── index.html
