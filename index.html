@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07141b">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PERRY RUNNER 3D · Aventura universitaria</title>
+<meta name="description" content="Perry Runner 3D: endless runner 3D ambientado en el campus de la Universidad del Valle. Salta, deslízate y llega a tiempo a clase.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marino:#07141b; --marino2:#0b1c26; --panel:#10262f;
+  --dorado:#2bc4bd; --naranja:#ff9d1f; --vino:#a3153a; --azul:#2f80d6;
+  --lima:#ffd23f; --verde:#4cc46a;
+  --texto:#eef6f6; --suave:#9fc2c6;
+  --radio:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--marino);color:var(--texto);line-height:1.65;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.contenedor{width:min(1120px,92%);margin-inline:auto}
+section{padding:92px 0}
+.titulo-seccion{font-family:Bungee,Inter,sans-serif;font-size:clamp(1.9rem,4.5vw,3rem);color:var(--dorado);line-height:1.1;margin-bottom:10px}
+.etiqueta{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--naranja);margin-bottom:10px}
+.bajada{color:var(--suave);max-width:680px;margin-bottom:38px}
+
+/* ---------- NAV ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(7,20,27,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:Bungee,sans-serif;font-size:1.3rem;color:var(--dorado);letter-spacing:.02em}
+.logo span{color:var(--naranja)}
+nav ul{display:flex;gap:6px;list-style:none;align-items:center}
+nav a.enlace{padding:8px 14px;border-radius:999px;font-weight:600;font-size:.92rem;color:var(--suave);transition:.2s}
+nav a.enlace:hover,nav a.enlace.activo{color:#fff;background:rgba(255,255,255,.1)}
+nav a.jugar{background:var(--naranja);color:#07141b;font-weight:700;padding:9px 18px;border-radius:999px}
+nav a.jugar:hover{background:#ffbd5c}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
+
+/* ---------- HERO ---------- */
+#inicio{padding-top:140px;min-height:100vh;display:flex;align-items:center;
+  background:radial-gradient(1000px 520px at 78% 30%,rgba(47,128,214,.22),transparent 60%),radial-gradient(700px 420px at 10% 90%,rgba(255,157,31,.16),transparent 60%),var(--marino)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.genero{display:inline-block;background:rgba(43,196,189,.14);border:1px solid var(--dorado);color:var(--dorado);font-weight:700;font-size:.8rem;letter-spacing:.2em;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+h1{font-family:Bungee,sans-serif;font-size:clamp(2.6rem,7.4vw,5.4rem);line-height:.98;color:#fff;text-shadow:0 4px 0 var(--vino),0 10px 30px rgba(0,0,0,.4)}
+h1 em{font-style:normal;color:var(--dorado)}
+.frase{font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:700;margin:22px 0 10px;color:var(--dorado)}
+.sintesis{color:var(--suave);max-width:560px}
+.botones{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 30px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:14px;padding:15px 28px;transition:.2s;cursor:pointer;border:2px solid transparent;font-size:1rem;font-family:inherit}
+.btn-principal{background:var(--naranja);color:#07141b;box-shadow:0 8px 0 #b25f00,0 14px 28px rgba(0,0,0,.35)}
+.btn-principal:hover{transform:translateY(-3px);background:#ffbd5c}
+.btn-sec{border-color:var(--azul);color:#fff;background:transparent}
+.btn-sec:hover{background:rgba(47,128,214,.18)}
+.metricas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:560px}
+.metrica{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 12px;text-align:center}
+.metrica b{display:block;font-family:Bungee,sans-serif;font-size:1.7rem;color:var(--dorado);line-height:1.1}
+.metrica small{color:var(--suave);font-size:.78rem;font-weight:500}
+.teclas{display:inline-flex;gap:4px;justify-content:center}
+kbd{font-family:Inter,sans-serif;font-weight:700;background:#12303a;border:1px solid #2bc4bd;border-bottom-width:3px;border-radius:8px;padding:2px 9px;font-size:.95rem;color:#fff}
+
+.marco{position:relative;border-radius:24px;overflow:hidden;border:2px solid rgba(255,255,255,.14);box-shadow:0 30px 70px rgba(0,0,0,.5);aspect-ratio:16/10;background:#0a1a23}
+.marco img.captura{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.marco .insignia{position:absolute;left:14px;bottom:14px;z-index:3;background:rgba(0,0,0,.55);padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:600}
+/* ilustracion de respaldo (si no existe assets/captura.png) */
+.escena{position:absolute;inset:0;background:linear-gradient(#0d2b45 0%,#3a7ca5 30%,#ffb347 47.8%,#0b1c26 48.2%)}
+.escena .via{position:absolute;left:0;right:0;bottom:0;height:52%;background:#0c1d27;clip-path:polygon(40% 0,60% 0,100% 100%,0 100%)}
+.escena .raya{position:absolute;left:50%;width:6px;background:#2bc4bd;box-shadow:0 0 10px #2bc4bd;transform:translateX(-50%);border-radius:3px}
+.escena .raya:nth-child(2){bottom:2%;height:14%}.escena .raya:nth-child(3){bottom:20%;height:10%;width:5px}.escena .raya:nth-child(4){bottom:34%;height:7%;width:4px}.escena .raya:nth-child(5){bottom:44%;height:4%;width:3px}
+.escena .edif{position:absolute;bottom:48%;background:#5a1a2c;box-shadow:0 0 18px rgba(163,21,58,.6);width:13%}
+.escena .edif.a{left:6%;height:30%}.escena .edif.b{left:20%;height:20%;background:#7a2a3a}.escena .edif.c{right:6%;height:34%;background:#ff9d1f;box-shadow:0 0 22px #ff9d1f}.escena .edif.d{right:20%;height:22%;background:#7a2a3a}
+.escena .valla{position:absolute;left:44%;bottom:12%;width:12%;height:7%;background:var(--naranja);border-radius:4px;box-shadow:0 0 0 3px #fff inset}
+.escena .moneda{position:absolute;width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b8,#ffd23f 55%,#b88a00);box-shadow:0 0 16px #ffd23f}
+.escena .moneda.m1{left:47%;bottom:30%}.escena .moneda.m2{left:50.5%;bottom:34%;transform:scale(.8)}.escena .moneda.m3{left:54%;bottom:38%;transform:scale(.65)}
+.escena .letra{position:absolute;inset:auto 0 auto 0;top:30%;text-align:center;font-family:Bungee,sans-serif;color:rgba(255,255,255,.85);font-size:clamp(1rem,3vw,1.7rem)}
+
+/* ---------- TARJETAS ---------- */
+.tarjeta{background:var(--panel);border:1px solid rgba(255,255,255,.09);border-radius:var(--radio);padding:26px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fondo-alt{background:var(--marino2)}
+
+/* Historia */
+.linea{position:relative;display:grid;gap:18px;margin-top:6px}
+.paso{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start}
+.paso .num{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-family:Bungee,sans-serif;font-size:1.4rem;background:var(--vino);color:#fff;border:3px solid var(--dorado)}
+.paso h3{color:#fff;margin-bottom:2px}
+.paso p{color:var(--suave)}
+.cita{border-left:5px solid var(--naranja);padding:6px 0 6px 20px;font-size:1.2rem;font-weight:600;color:#fff;margin-top:28px}
+
+/* Personaje */
+.retrato{aspect-ratio:1/1;border-radius:26px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 38%,#14505a,#07141b 70%);border:2px solid rgba(255,255,255,.14)}
+.retrato img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:2}
+.retrato .sombrero{position:absolute;left:50%;top:22%;transform:translateX(-50%);width:46%;height:22%;background:#3a1a8a;border-radius:50% 50% 8% 8%/70% 70% 8% 8%;box-shadow:0 16px 0 -2px #3a0f1c}
+.retrato .cara{position:absolute;left:50%;top:38%;transform:translateX(-50%);width:44%;aspect-ratio:1;border-radius:50%;background:#2bc4bd;box-shadow:inset 0 -14px 0 rgba(0,0,0,.2),0 0 30px rgba(43,196,189,.7)}
+.retrato .cara:before{content:"";position:absolute;inset:22% 14% 8% 14%;border-radius:50%;background:#fff}
+.retrato .nombre{position:absolute;bottom:14px;left:0;right:0;text-align:center;z-index:3;font-family:Bungee,sans-serif;font-size:1.3rem;color:var(--dorado);text-shadow:0 2px 6px #000}
+.habilidades{display:grid;gap:14px;margin-top:20px}
+.hab{display:flex;gap:14px;align-items:flex-start}
+.hab .ico{flex:0 0 46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;background:rgba(43,196,189,.16);border:1px solid var(--dorado)}
+.hab b{color:#fff}.hab p{color:var(--suave);font-size:.95rem}
+.rasgos{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.rasgos span{background:rgba(255,255,255,.08);border-radius:999px;padding:5px 14px;font-size:.85rem;font-weight:600}
+
+/* Mecanicas */
+.control{text-align:center}
+.control .teclas{margin-bottom:12px}
+.control kbd{font-size:1.2rem;padding:8px 18px}
+.control h3{color:var(--dorado);margin-bottom:6px}
+.control p{color:var(--suave);font-size:.95rem}
+.reglas{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.reglas h3{margin-bottom:10px;color:#fff}
+.reglas ul{list-style:none;display:grid;gap:10px}
+.reglas li{padding-left:28px;position:relative;color:var(--suave)}
+.reglas li:before{content:"▸";position:absolute;left:4px;color:var(--naranja);font-weight:700}
+.reglas li b{color:#fff}
+.victoria{border-top:4px solid #4cc46a}.derrota{border-top:4px solid var(--vino)}
+.chip{display:inline-block;border-radius:6px;padding:1px 8px;font-size:.78rem;font-weight:700;color:#07141b}
+.chip.n{background:var(--naranja)}.chip.a{background:var(--azul)}
+
+/* Datos */
+.dato{text-align:center}
+.dato .valor{font-family:Bungee,sans-serif;font-size:2.4rem;line-height:1.1;color:var(--dorado)}
+.dato .unidad{font-size:.85rem;color:var(--suave);font-weight:600}
+.dato p{margin-top:8px;font-size:.92rem;color:var(--suave)}
+.infografia{margin-top:26px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.infografia h3{margin-bottom:12px;color:#fff}
+.barra{margin-bottom:14px}
+.barra .t{display:flex;justify-content:space-between;font-size:.9rem;font-weight:600;margin-bottom:5px}
+.barra .t span:last-child{color:var(--dorado)}
+.barra .riel{height:12px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden}
+.barra .relleno{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--naranja),var(--dorado));width:0;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+#grafico{width:100%;height:auto}
+#grafico text{fill:#9fc2c6;font-size:11px;font-family:Inter}
+.nota{font-size:.82rem;color:var(--suave);margin-top:8px}
+
+/* Jugar */
+.visor{position:relative;border-radius:22px;overflow:hidden;border:2px solid rgba(255,255,255,.16);background:#000;aspect-ratio:16/9;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.visor iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.visor .tapa{position:absolute;inset:0;z-index:5;display:grid;place-items:center;background:rgba(7,20,27,.78);cursor:pointer;text-align:center;padding:20px}
+.visor .tapa.oculta{display:none}
+.visor .tapa b{font-family:Bungee,sans-serif;font-size:clamp(1.3rem,4vw,2.4rem);color:var(--dorado);display:block;margin-bottom:6px}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 30px}
+.req{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.req h3{color:#fff;margin-bottom:10px}
+.req ul{list-style:none;display:grid;gap:8px;color:var(--suave)}
+.req li:before{content:"✔ ";color:#4cc46a;font-weight:700}
+.aviso{margin-top:18px;border-left:5px solid var(--azul);background:rgba(47,128,214,.1);padding:12px 16px;border-radius:8px;font-size:.92rem;color:var(--suave)}
+
+footer{padding:34px 0;text-align:center;color:var(--suave);font-size:.9rem;border-top:1px solid rgba(255,255,255,.08);background:#050f14}
+footer b{color:var(--dorado)}
+
+.rev{opacity:0;transform:translateY(24px);transition:.7s}
+.rev.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ---------- ADAPTABLE ---------- */
+@media (max-width:900px){
+  .hero,.grid2,.infografia,.req,.reglas{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr 1fr}
+  section{padding:72px 0}
+  .burger{display:block}
+  nav ul{position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--marino);padding:14px 4% 20px;gap:4px;display:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  nav ul.abierto{display:flex}
+  nav a.enlace,nav a.jugar{width:100%;text-align:center}
+}
+@media (max-width:560px){.grid3{grid-template-columns:1fr}.metricas{grid-template-columns:1fr 1fr 1fr}.metrica b{font-size:1.3rem}.btn{width:100%;justify-content:center}}
+
+/* ---------- CAPA NEON FUTURISTA ---------- */
+html{background:#07141b;color-scheme:dark}
+body{background-color:#07141b;background-image:radial-gradient(900px 500px at 85% -5%,rgba(255,157,31,.10),transparent 60%),radial-gradient(800px 500px at 0% 40%,rgba(43,196,189,.08),transparent 60%);background-attachment:fixed}
+section{background:transparent}
+body:before{display:none}
+header{border-bottom:1px solid rgba(43,196,189,.35);box-shadow:0 0 22px rgba(43,196,189,.18)}
+.logo{text-shadow:0 0 8px var(--dorado),0 0 22px rgba(43,196,189,.6)}
+.logo span{text-shadow:0 0 8px var(--naranja),0 0 22px rgba(255,157,31,.7)}
+nav a.enlace:hover,nav a.enlace.activo{color:var(--dorado);background:rgba(43,196,189,.1);box-shadow:0 0 14px rgba(43,196,189,.35) inset}
+nav a.jugar{box-shadow:0 0 16px var(--naranja),0 0 36px rgba(255,157,31,.45)}
+#inicio{background:radial-gradient(1000px 520px at 78% 30%,rgba(163,21,58,.30),transparent 60%),radial-gradient(700px 420px at 10% 90%,rgba(255,157,31,.20),transparent 60%),radial-gradient(500px 300px at 50% 0%,rgba(43,196,189,.12),transparent 70%),transparent}
+h1{text-shadow:0 0 18px rgba(43,196,189,.35),4px 4px 0 var(--vino)}
+h1 em{text-shadow:0 0 14px var(--naranja),0 0 38px rgba(255,157,31,.7);color:var(--naranja)}
+.titulo-seccion{text-shadow:0 0 12px rgba(43,196,189,.7),0 0 34px rgba(43,196,189,.35)}
+.etiqueta{text-shadow:0 0 10px rgba(255,157,31,.8)}
+.genero{box-shadow:0 0 14px rgba(43,196,189,.45),inset 0 0 12px rgba(43,196,189,.15)}
+.frase{text-shadow:0 0 12px rgba(43,196,189,.6)}
+.btn-principal{box-shadow:0 0 16px rgba(255,157,31,.4),0 8px 0 #b25f00}
+.btn-principal:hover{box-shadow:0 0 24px rgba(255,157,31,.55),0 8px 0 #b25f00}
+.btn-sec{box-shadow:0 0 12px rgba(47,128,214,.5),inset 0 0 12px rgba(47,128,214,.2);border-color:var(--dorado)}
+.btn-sec:hover{background:rgba(43,196,189,.15);box-shadow:0 0 24px rgba(43,196,189,.7),inset 0 0 14px rgba(43,196,189,.3)}
+.metrica{border:1px solid rgba(43,196,189,.35);box-shadow:0 0 14px rgba(43,196,189,.15) inset}
+.metrica b,.dato .valor{text-shadow:0 0 12px rgba(43,196,189,.8)}
+kbd{box-shadow:0 0 10px rgba(43,196,189,.5);color:var(--dorado)}
+.marco,.retrato,.visor{border:2px solid var(--dorado);box-shadow:0 0 22px rgba(43,196,189,.55),0 0 70px rgba(163,21,58,.35)}
+.tarjeta{background:linear-gradient(160deg,rgba(16,42,52,.85),rgba(8,22,30,.92));border:1px solid rgba(163,21,58,.55);box-shadow:0 0 18px rgba(163,21,58,.22),inset 0 0 20px rgba(43,196,189,.05);transition:.25s}
+.tarjeta:hover{border-color:var(--dorado);box-shadow:0 0 26px rgba(43,196,189,.45),inset 0 0 22px rgba(43,196,189,.08)}
+.fondo-alt{background:linear-gradient(180deg,rgba(163,21,58,.10),rgba(8,22,30,.9))}
+.paso .num{background:var(--vino);border-color:var(--dorado);box-shadow:0 0 16px var(--vino),0 0 30px rgba(43,196,189,.4)}
+.cita{border-left-color:var(--naranja);box-shadow:-8px 0 18px -10px var(--naranja)}
+.hab .ico{border-color:var(--dorado);box-shadow:0 0 12px rgba(43,196,189,.5)}
+.rasgos span{border:1px solid rgba(255,157,31,.5);background:rgba(255,157,31,.08)}
+.reglas li:before{text-shadow:0 0 8px var(--naranja)}
+.victoria{border-top-color:var(--verde);box-shadow:0 -6px 22px -12px var(--verde)}
+.derrota{border-top-color:var(--naranja);box-shadow:0 -6px 22px -12px var(--naranja)}
+.chip{box-shadow:0 0 10px currentColor}
+.barra .relleno{background:linear-gradient(90deg,var(--vino),var(--naranja),var(--dorado));box-shadow:0 0 12px rgba(255,157,31,.7)}
+.barra .riel{box-shadow:0 0 0 1px rgba(43,196,189,.25)}
+#grafico line,#grafico path{filter:drop-shadow(0 0 4px #2bc4bd)}
+.visor .tapa b{text-shadow:0 0 14px var(--dorado),0 0 36px rgba(43,196,189,.6)}
+.aviso{border-left-color:var(--dorado);background:rgba(43,196,189,.08);box-shadow:0 0 16px rgba(43,196,189,.12)}
+.req li:before{text-shadow:0 0 8px var(--verde)}
+footer{border-top:1px solid rgba(43,196,189,.35);box-shadow:0 -4px 22px rgba(43,196,189,.12)}
+footer b{text-shadow:0 0 10px rgba(43,196,189,.7)}
+@media (prefers-reduced-motion:reduce){body:before{display:none}}
+
+/* ---------- GALERIA + IMAGENES ---------- */
+.marco img.captura{object-fit:contain;background:#07141b}
+.retrato img{inset:2% 4% 13% 4%;width:92%;height:85%;filter:drop-shadow(0 0 18px rgba(43,196,189,.45))}
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+.galeria figure{margin:0;border-radius:18px;overflow:hidden;border:2px solid rgba(163,21,58,.6);background:#07141b;box-shadow:0 0 18px rgba(163,21,58,.3);transition:.25s}
+.galeria figure:hover{border-color:var(--dorado);box-shadow:0 0 28px rgba(43,196,189,.55);transform:translateY(-4px)}
+.galeria img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.galeria figcaption{padding:10px 14px;font-weight:600;font-size:.9rem;color:var(--dorado);text-shadow:0 0 8px rgba(43,196,189,.6);background:rgba(7,20,27,.85)}
+@media (max-width:700px){.galeria{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. ENCABEZADO DE NAVEGACION ============ -->
+<header>
+  <div class="contenedor nav">
+    <a href="#inicio" class="logo" aria-label="Perry Runner 3D, inicio">PERRY<span>RUNNER</span> 3D</a>
+    <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+    <nav aria-label="Principal">
+      <ul id="menu">
+        <li><a class="enlace" href="#historia">Historia</a></li>
+        <li><a class="enlace" href="#personaje">Personaje</a></li>
+        <li><a class="enlace" href="#mecanicas">Mecánicas</a></li>
+        <li><a class="enlace" href="#datos">Datos</a></li>
+        <li><a class="enlace" href="#galeria">Galería</a></li>
+        <li><a class="jugar" href="#jugar">Jugar ahora</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ 2. SECCION PRINCIPAL ============ -->
+<section id="inicio">
+  <div class="contenedor hero">
+    <div>
+      <span class="genero">ENDLESS RUNNER 3D</span>
+      <h1>PERRY<br><em>RUNNER</em> 3D</h1>
+      <p class="frase">¡Corre, esquiva y llega a tiempo a clase!</p>
+      <p class="sintesis">Perry va tarde a clases y la avenida del campus está llena de obstáculos. El conflicto es contra el reloj y contra el camino: cada golpe cuesta una vida. La meta de la partida es acumular <b>1000 puntos</b> sin quedarse sin vidas y conseguir el <b>nuevo récord</b>.</p>
+      <div class="botones">
+        <a class="btn btn-principal" href="#jugar">▶ JUGAR AHORA</a>
+        <a class="btn btn-sec" href="#historia">Explorar la historia</a>
+      </div>
+      <div class="metricas" aria-label="Métricas rápidas">
+        <div class="metrica"><b>1000</b><small>puntos para ganar</small></div>
+        <div class="metrica"><b>3 ♥</b><small>vidas iniciales</small></div>
+        <div class="metrica"><div class="teclas"><kbd>↑</kbd><kbd>↓</kbd></div><small>saltar · deslizarse</small></div>
+      </div>
+    </div>
+    <div class="marco">
+      <div class="escena" aria-hidden="true">
+        <div class="edif a"></div><div class="edif b"></div><div class="edif c"></div><div class="edif d"></div>
+        <div class="via"></div>
+        <div class="raya"></div><div class="raya"></div><div class="raya"></div><div class="raya"></div>
+        <div class="valla"></div>
+        <div class="moneda m1"></div><div class="moneda m2"></div><div class="moneda m3"></div>
+        <div class="letra">AVENIDA DEL CAMPUS</div>
+      </div>
+      <!-- Pon tu captura en assets/captura.png (se verá encima de la ilustración) -->
+      <img class="captura" src="assets/captura.png" alt="Captura de pantalla de Perry Runner 3D" onerror="this.remove()">
+      <span class="insignia">Perry Runner 3D · Unity</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. HISTORIA ============ -->
+<section id="historia" class="fondo-alt">
+  <div class="contenedor">
+    <span class="etiqueta">Capítulo 1</span>
+    <h2 class="titulo-seccion">Historia</h2>
+    <p class="bajada">Una aventura universitaria ambientada en el campus de la Universidad del Valle.</p>
+    <div class="grid2">
+      <div>
+        <h3 style="color:#fff;margin-bottom:10px">Contexto narrativo</h3>
+        <p style="color:var(--suave);margin-bottom:14px">El universo del juego es un campus universitario vivo: una gran avenida bordeada por edificios de ladrillo y cristal, con el pórtico de entrada, la biblioteca, el auditorio, la cafetería, el comedor y los edificios de Ingeniería, Ciencias y Laboratorios. Es un lugar cotidiano, pero a toda velocidad se convierte en una pista llena de riesgos.</p>
+        <p style="color:var(--suave)">La partida comienza en un día cualquiera con un problema muy reconocible para la comunidad académica: <b style="color:#fff">se hizo tarde</b>. Obras, vallas y barras atraviesan la avenida y el tiempo no espera.</p>
+        <p class="cita">“Perry llega tarde a clases. ¡Corre por la avenida del campus, esquiva los obstáculos y junta monedas!”</p>
+      </div>
+      <div class="linea">
+        <div class="paso rev"><div class="num">1</div><div><h3>Planteamiento</h3><p>Perry sale con el tiempo justo y debe cruzar el campus entero antes de que empiece la clase.</p></div></div>
+        <div class="paso rev"><div class="num">2</div><div><h3>Conflicto</h3><p>La avenida está bloqueada por vallas bajas y barras altas. Cada choque le quita una de sus tres vidas, y el ritmo de la carrera aumenta sin parar.</p></div></div>
+        <div class="paso rev"><div class="num">3</div><div><h3>Motivación</h3><p>Las monedas doradas son el premio al riesgo: suman puntos extra y acercan a Perry a su objetivo.</p></div></div>
+        <div class="paso rev"><div class="num">4</div><div><h3>Resolución</h3><p>Si reúne 1000 puntos, llega a tiempo y logra el “nuevo récord”. Si pierde sus vidas, el juego termina y toca intentarlo de nuevo.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PERSONAJE PRINCIPAL ============ -->
+<section id="personaje">
+  <div class="contenedor grid2">
+    <div class="retrato rev">
+            <img src="assets/personaje.png" alt="Perry, personaje principal" onerror="this.remove()">
+      <div class="nombre">PERRY</div>
+    </div>
+    <div>
+      <span class="etiqueta">Capítulo 2</span>
+      <h2 class="titulo-seccion">Personaje principal</h2>
+      <p style="color:var(--suave)"><b style="color:#fff">Perry</b> es un estudiante detective con sombrero, curioso, ágil y siempre con prisa. Su rol es el de corredor: no ataca ni usa objetos, su única herramienta es la precisión de sus movimientos.</p>
+      <div class="habilidades">
+        <div class="hab"><div class="ico">⤴</div><div><b>Salto</b><p>Supera las vallas bajas naranjas con un salto de hasta 2,6 m de altura.</p></div></div>
+        <div class="hab"><div class="ico">⤵</div><div><b>Deslizamiento</b><p>Se agacha y se desliza durante 1,1 s para pasar bajo las barras altas; su colisión se reduce a la mitad de la altura.</p></div></div>
+        <div class="hab"><div class="ico">✦</div><div><b>Invulnerabilidad breve</b><p>Tras un golpe parpadea y es invulnerable durante 1,2 s para recuperar el ritmo.</p></div></div>
+      </div>
+      <div class="rasgos"><span>Sombrero de detective</span><span>Modelo 3D animado</span><span>Altura de 2 m en el juego</span><span>Animaciones: correr, saltar, deslizarse y caer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. MECANICAS Y CONTROLES ============ -->
+<section id="mecanicas" class="fondo-alt">
+  <div class="contenedor">
+    <span class="etiqueta">Capítulo 3</span>
+    <h2 class="titulo-seccion">Mecánicas y controles</h2>
+    <p class="bajada">Se juega solo con el teclado. Perry corre automáticamente: tú decides cuándo saltar y cuándo deslizarte.</p>
+    <div class="grid3">
+      <div class="tarjeta control rev"><div class="teclas"><kbd>↑</kbd></div><h3>Saltar</h3><p>Flecha arriba. Para las vallas bajas <span class="chip n">naranja</span></p></div>
+      <div class="tarjeta control rev"><div class="teclas"><kbd>↓</kbd></div><h3>Deslizarse</h3><p>Flecha abajo. Para las barras altas <span class="chip a">azul</span></p></div>
+      <div class="tarjeta control rev"><div class="teclas"><kbd>R</kbd><kbd>Enter</kbd></div><h3>Reiniciar</h3><p>Al terminar la partida, vuelve a empezar al instante.</p></div>
+    </div>
+    <div class="reglas">
+      <div class="tarjeta rev">
+        <h3>Reglas del sistema</h3>
+        <ul>
+          <li><b>Obstáculos:</b> aparecen al azar de dos tipos, valla baja (saltar) y barra alta (deslizarse), con conos y cajas de decoración.</li>
+          <li><b>Recolectables:</b> las monedas doradas aparecen en filas de tres y dan <b>+25 puntos</b> cada una.</li>
+          <li><b>Puntuación:</b> sumas <b>10 puntos por segundo</b> sobrevivido más los puntos de las monedas.</li>
+          <li><b>Dificultad:</b> el mundo parte a 11 u/s y acelera 0,18 u/s cada segundo.</li>
+          <li><b>Justicia:</b> los obstáculos siempre dejan tiempo para aterrizar o levantarse antes del siguiente.</li>
+        </ul>
+      </div>
+      <div style="display:grid;gap:20px">
+        <div class="tarjeta victoria rev"><h3>🏆 Condición de victoria</h3><p style="color:var(--suave)">Alcanzar <b style="color:#fff">1000 puntos</b> antes de perder las tres vidas. Aparece el mensaje “¡NUEVO RÉCORD!” con la puntuación y las monedas juntadas.</p></div>
+        <div class="tarjeta derrota rev"><h3>💥 Condición de derrota</h3><p style="color:var(--suave)">Chocar con un obstáculo cuando ya no quedan vidas. Aparece “JUEGO TERMINADO” con la puntuación final.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. DATOS E INFOGRAFIA ============ -->
+<section id="datos">
+  <div class="contenedor">
+    <span class="etiqueta">Capítulo 4</span>
+    <h2 class="titulo-seccion">Datos e infografía</h2>
+    <p class="bajada">Los parámetros de diseño del juego, tal como están configurados en Unity.</p>
+    <div class="grid3">
+      <div class="tarjeta dato rev"><div class="valor" data-n="1000">0</div><div class="unidad">PUNTOS OBJETIVO</div><p>Puntuación necesaria para ganar la partida.</p></div>
+      <div class="tarjeta dato rev"><div class="valor" data-n="3">0</div><div class="unidad">VIDAS</div><p>Golpes que puedes recibir antes de perder.</p></div>
+      <div class="tarjeta dato rev"><div class="valor" data-n="2">0</div><div class="unidad">TIPOS DE OBSTÁCULO</div><p>Valla baja (saltar) y barra alta (deslizarse).</p></div>
+      <div class="tarjeta dato rev"><div class="valor" data-n="11">0</div><div class="unidad">u/s · VELOCIDAD INICIAL</div><p>Crece 0,18 u/s cada segundo.</p></div>
+      <div class="tarjeta dato rev"><div class="valor" data-n="25">0</div><div class="unidad">PUNTOS POR MONEDA</div><p>Premio extra por arriesgarse.</p></div>
+      <div class="tarjeta dato rev"><div class="valor" data-n="10">0</div><div class="unidad">PUNTOS POR SEGUNDO</div><p>Se acumulan solo por sobrevivir.</p></div>
+    </div>
+
+    <div class="infografia">
+      <div class="tarjeta rev">
+        <h3>Parámetros de movimiento y reacción</h3>
+        <div class="barra"><div class="t"><span>Altura del salto</span><span>2,6 m</span></div><div class="riel"><div class="relleno" data-w="87"></div></div></div>
+        <div class="barra"><div class="t"><span>Duración del deslizamiento</span><span>1,1 s</span></div><div class="riel"><div class="relleno" data-w="55"></div></div></div>
+        <div class="barra"><div class="t"><span>Invulnerabilidad tras un golpe</span><span>1,2 s</span></div><div class="riel"><div class="relleno" data-w="60"></div></div></div>
+        <div class="barra"><div class="t"><span>Intervalo entre obstáculos (máx.)</span><span>2,4 s</span></div><div class="riel"><div class="relleno" data-w="80"></div></div></div>
+        <div class="barra"><div class="t"><span>Intervalo entre obstáculos (mín.)</span><span>1,3 s</span></div><div class="riel"><div class="relleno" data-w="43"></div></div></div>
+        <p class="nota">Las barras comparan cada valor contra un máximo de referencia de su misma escala.</p>
+      </div>
+      <div class="tarjeta rev">
+        <h3>Velocidad del mundo en el tiempo</h3>
+        <svg id="grafico" viewBox="0 0 320 210" role="img" aria-label="Gráfica de velocidad contra tiempo"></svg>
+        <p class="nota">Sin recoger monedas, la victoria llega a los 100 s (1000 ÷ 10) con el mundo a 29 u/s.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section id="galeria">
+  <div class="contenedor">
+    <span class="etiqueta">Capturas del juego</span>
+    <h2 class="titulo-seccion">Galería</h2>
+    <p style="color:var(--suave);max-width:60ch">Así se ve Perry Runner 3D en acción: esquivando obstáculos, sumando monedas y rompiendo récords.</p>
+    <div class="galeria">
+      <figure><img src="assets/galeria-1.jpg" alt="Perry corriendo y esquivando un cono en la calle" loading="lazy"><figcaption>Carrera en la ciudad</figcaption></figure>
+      <figure><img src="assets/galeria-2.jpg" alt="Perry saltando un obstáculo a mayor velocidad" loading="lazy"><figcaption>Más velocidad, más reto</figcaption></figure>
+      <figure><img src="assets/galeria-3.jpg" alt="Pantalla de juego terminado con puntuación final" loading="lazy"><figcaption>Pantalla de juego terminado</figcaption></figure>
+      <figure><img src="assets/galeria-4.jpg" alt="Pantalla de nuevo récord" loading="lazy"><figcaption>¡Nuevo récord!</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. DESPLIEGUE Y EJECUCION ============ -->
+<section id="jugar" class="fondo-alt">
+  <div class="contenedor">
+    <span class="etiqueta">¡Tu turno!</span>
+    <h2 class="titulo-seccion">Jugar ahora</h2>
+    <p class="bajada">El juego corre directamente en tu navegador (Unity WebGL). Haz clic en el recuadro para empezar.</p>
+
+    <div class="visor" id="visor">
+      <div class="tapa" id="tapa"><div><b>▶ CLIC PARA JUGAR</b><span style="color:var(--suave)">Se cargará Perry Runner 3D</span></div></div>
+      <iframe id="juego" title="Perry Runner 3D" data-src="juego/index.html" allow="fullscreen; autoplay" allowfullscreen></iframe>
+    </div>
+    <div class="acciones">
+      <button class="btn btn-principal" id="pantallaCompleta">⛶ Pantalla completa</button>
+      <a class="btn btn-sec" href="juego/index.html" target="_blank" rel="noopener">Abrir en otra pestaña</a>
+    </div>
+
+    <div class="req">
+      <div class="tarjeta rev">
+        <h3>Requerimientos mínimos</h3>
+        <ul>
+          <li>Computador de escritorio o portátil con teclado</li>
+          <li>Chrome, Edge, Firefox o Safari actualizados con WebGL 2.0</li>
+          <li>4 GB de RAM y aceleración por hardware activada</li>
+          <li>Conexión estable (la primera carga descarga el juego)</li>
+        </ul>
+      </div>
+      <div class="tarjeta rev">
+        <h3>Instrucciones técnicas</h3>
+        <ul>
+          <li>Haz clic dentro del juego antes de usar las flechas</li>
+          <li>La primera carga puede tardar unos segundos</li>
+          <li>Si se ve lento, cierra otras pestañas y activa la aceleración por hardware</li>
+          <li>Si no carga, recarga con Ctrl + F5 o abre el juego en otra pestaña</li>
+        </ul>
+      </div>
+    </div>
+    <p class="aviso">El juego está pensado para teclado: en celulares y tabletas sin teclado no se puede controlar a Perry.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="contenedor">
+    <p><b>PERRY RUNNER 3D</b> · Proyecto de Game Development · Universidad del Valle</p>
+    <p>Desarrollado por <b>[TU NOMBRE]</b> · Hecho con Unity</p>
+  </div>
+</footer>
+
+<script>
+// --- Menú móvil ---
+const burger=document.getElementById('burger'), menu=document.getElementById('menu');
+burger.addEventListener('click',()=>menu.classList.toggle('abierto'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('abierto')));
+
+// --- Enlace activo según la sección visible ---
+const enlaces=[...document.querySelectorAll('a.enlace')];
+const secciones=enlaces.map(a=>document.querySelector(a.getAttribute('href')));
+const obsNav=new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ enlaces.forEach(a=>a.classList.toggle('activo',a.getAttribute('href')==='#'+e.target.id)); }});
+},{rootMargin:'-45% 0px -50% 0px'});
+secciones.forEach(s=>s&&obsNav.observe(s));
+
+// --- Aparición, contadores y barras ---
+function contar(el){
+  const fin=+el.dataset.n, t0=performance.now(), dur=1200;
+  (function paso(t){ const p=Math.min((t-t0)/dur,1); el.textContent=Math.round(fin*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(paso); })(t0);
+}
+const obsRev=new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(!e.isIntersecting) return;
+    e.target.classList.add('vis');
+    e.target.querySelectorAll('.valor[data-n]').forEach(contar);
+    e.target.querySelectorAll('.relleno').forEach(r=>r.style.width=r.dataset.w+'%');
+    obsRev.unobserve(e.target);
+  });
+},{threshold:.2});
+document.querySelectorAll('.rev').forEach(el=>obsRev.observe(el));
+
+// --- Gráfica de velocidad (v = 11 + 0,18·t) ---
+(function(){
+  const v0=11, a=0.18, T=100, svg=document.getElementById('grafico');
+  const x0=38,x1=306,y0=180,y1=14, vmax=32, vmin=0;
+  const X=t=>x0+(x1-x0)*t/T, Y=v=>y0-(y0-y1)*(v-vmin)/(vmax-vmin);
+  let s='';
+  [0,10,20,30].forEach(v=>{ s+=`<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="rgba(255,255,255,.12)"/><text x="${x0-6}" y="${Y(v)+4}" text-anchor="end">${v}</text>`; });
+  [0,25,50,75,100].forEach(t=>{ s+=`<text x="${X(t)}" y="${y0+16}" text-anchor="middle">${t}s</text>`; });
+  s+=`<path d="M${X(0)} ${Y(v0)} L${X(T)} ${Y(v0+a*T)} L${X(T)} ${y0} L${X(0)} ${y0} Z" fill="rgba(255,157,31,.18)"/>`;
+  s+=`<line x1="${X(0)}" y1="${Y(v0)}" x2="${X(T)}" y2="${Y(v0+a*T)}" stroke="#2bc4bd" stroke-width="3" stroke-linecap="round"/>`;
+  s+=`<circle cx="${X(0)}" cy="${Y(v0)}" r="5" fill="#ff9d1f"/><circle cx="${X(T)}" cy="${Y(v0+a*T)}" r="5" fill="#ff9d1f"/>`;
+  s+=`<text x="${X(0)+8}" y="${Y(v0)-9}" style="fill:#fff;font-weight:700">11 u/s</text><text x="${X(T)-8}" y="${Y(v0+a*T)-9}" text-anchor="end" style="fill:#fff;font-weight:700">29 u/s</text>`;
+  s+=`<text x="12" y="${(y0+y1)/2}" transform="rotate(-90 12 ${(y0+y1)/2})" text-anchor="middle">velocidad (u/s)</text>`;
+  svg.innerHTML=s;
+})();
+
+// --- Juego: carga al hacer clic, pantalla completa y teclas ---
+const tapa=document.getElementById('tapa'), frame=document.getElementById('juego'), visor=document.getElementById('visor');
+function cargarJuego(){
+  if(!frame.getAttribute('src')) frame.setAttribute('src',frame.dataset.src);
+  tapa.classList.add('oculta'); frame.focus();
+}
+tapa.addEventListener('click',cargarJuego);
+document.getElementById('pantallaCompleta').addEventListener('click',()=>{
+  cargarJuego();
+  (visor.requestFullscreen||visor.webkitRequestFullscreen||function(){}).call(visor);
+  setTimeout(()=>frame.focus(),300);
+});
+// evita que las flechas desplacen la página cuando el cursor está sobre el juego
+let sobreJuego=false;
+visor.addEventListener('mouseenter',()=>sobreJuego=true);
+visor.addEventListener('mouseleave',()=>sobreJuego=false);
+window.addEventListener('keydown',e=>{ if(sobreJuego&&['ArrowUp','ArrowDown','Space'].includes(e.code)) e.preventDefault(); },{passive:false});
+</script>
+</body>
+</html>
